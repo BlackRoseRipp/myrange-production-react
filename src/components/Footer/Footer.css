@@ -1,0 +1,18 @@
+.footer-clean {
+  margin-top: auto;
+  padding: 20px 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* position: absolute; */
+  background-color: #DDDDDD;
+  color: #000000;
+  align-items: flex-end;
+}
+
+.footer-clean .copyright {
+  margin-bottom: 0;
+  font-size: 13px;
+  opacity: 0.6;
+  text-align: center;
+}

@@ -1,0 +1,47 @@
+.navbar .navbar-nav {
+    --bs-navbar-color: #FFFFFF;
+    --bs-navbar-hover-color: #FFFFFF;
+}
+
+.navbar-brand {
+    --bs-navbar-brand-color: #FFFFFF;
+    --bs-navbar-brand-hover-color: #FFFFFF;
+}
+
+.navbar-toggler {
+    border-width: 0;
+}
+
+.top-nav {
+    display: none;
+    background: #ffaefd61;
+}
+.top-nav-list-item a{
+    text-decoration: none;;
+    color: white;
+}
+.top-nav-list-item{
+    display: inline-block;
+    width: 50%;
+    color: white;
+}
+.top-nav-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.top-nav-list-item-btn{
+    width:90%;
+    display: block;
+    margin: 10px auto;
+    border:none;
+    border-radius: 5px;
+    background: #59ddfc;
+    color:white;
+    padding:10px 0;
+}
+@media screen and (max-width: 991px) {
+    .top-nav{
+        display:block;
+    }
+}
