@@ -27,7 +27,7 @@ const Nav = () => {
                         </ul>
                         <ul className="navbar-nav d-flex justify-content-end">
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Dashboard</a>
+                                <a className="nav-link" href="/dashboard">Dashboard</a>
                             </li>
                         </ul>
                     </div>

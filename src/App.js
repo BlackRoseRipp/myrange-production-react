@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <SiteWrapper />
     </BrowserRouter>
-  );
+  )
 }
 
 export default App;

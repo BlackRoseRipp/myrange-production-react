@@ -1,9 +1,14 @@
 .hero-container {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../public/assets/img/temp/LoFiCafe.jpg");
     width: 100%;
-    height: 500px;
+    height: 700px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+}
+
+.hero-container h1 {
+    color: white;
+    padding-top: 25%;
 }
