@@ -12,6 +12,11 @@
     border-width: 0;
 }
 
+#page-container {
+    height: 100%;
+    bottom: 0;
+}
+
 .top-nav {
     display: none;
     background: #ffaefd61;

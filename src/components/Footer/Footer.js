@@ -1,8 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./Footer.css";
 const Footer = () => {
-  return (
+  const location = useLocation()
+
+  return location.pathname === '/dashboard' ? (
+    <div></div>
+  ) : (
     <footer className="footer-clean">
       <div className="container">
         <p className="copyright">

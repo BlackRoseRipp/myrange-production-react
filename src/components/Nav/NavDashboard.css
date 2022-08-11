@@ -1,0 +1,37 @@
+.side-nav {
+    background-color: #7F7FFF;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.side-nav button {
+    margin: 20px 0;
+}
+
+.navigation-container {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.navigation-container button {
+    padding: .1rem .4rem;
+}
+
+.footer-clean {
+    padding: 5% 0;
+    margin-top: auto;
+    margin-bottom: 0;
+    width: 100%;
+    /* position: absolute; */
+    background-color: #DDDDDD;
+    color: #000000;
+    align-items: flex-end;
+}
+  
+.footer-clean .copyright {
+    margin-bottom: 0;
+    font-size: 13px;
+    opacity: 0.6;
+    text-align: center;
+}
