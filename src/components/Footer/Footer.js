@@ -4,8 +4,8 @@ import "./Footer.css";
 const Footer = () => {
   const location = useLocation()
 
-  return location.pathname === '/dashboard' ? (
-    <div></div>
+  return location.pathname.startsWith('/dashboard') ? (
+    null
   ) : (
     <footer className="footer-clean">
       <div className="container">

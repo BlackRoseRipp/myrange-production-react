@@ -3,11 +3,15 @@ import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 
 const Home = React.lazy(() => import("../../pages/Home/Home"))
 const Dashboard = React.lazy(() => import("../../pages/Dashboard/Dashboard"))
+const DashboardOrgans = React.lazy(() => import("../Dashboard/DashboardOrgans"))
+const DashboardTests = React.lazy(() => import("../Dashboard/DashboardTests"))
 
 export const routes = () => {
     const pages = [
       { path: "/", component: <Home /> },
       { path: "/dashboard", component: <Dashboard /> },
+      { path: "/dashboard/organs", component: <DashboardOrgans /> },
+      { path: "/dashboard/tests", component: <DashboardTests /> },
     ]
   
     return (
