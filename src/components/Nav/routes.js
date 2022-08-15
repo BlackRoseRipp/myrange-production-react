@@ -20,7 +20,7 @@ export const routes = () => {
           <h3 style={{ textAlign: "center", padding: "50px" }}>Loading...</h3>
         }
       >
-        <div style={{ minHeight: "100%" }}>
+        <div style={{ minHeight: "100%", width: "100%" }}>
           <Routes>
             {pages.map((page) => {
               return <Route path={page.path} exact element={page.component} />;
