@@ -60,9 +60,9 @@ const TestDataReader = (file) => {
         }
 
         const parts = date.split("/")
-        const day = parseInt(date[1])
-        const month = parseInt(date[0])
-        const year = parseInt(date[2])
+        const day = parseInt(parts[1])
+        const month = parseInt(parts[0])
+        const year = parseInt(parts[2])
 
         if ( year < 1000 || year > 3000 || month === 0 || month > 12) {
             return false
