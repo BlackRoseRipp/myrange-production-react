@@ -174,6 +174,36 @@ const DashboardOrgans = () => {
                             All Kidney Tests
                         </label>
                     </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckBUN'></input>
+                        <label className='form-check-label' for='flexCheckBUN'>
+                            BUN
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckCreatinine'></input>
+                        <label className='form-check-label' for='flexCheckCreatinine'>
+                            Creatinine
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckAlbumin'></input>
+                        <label className='form-check-label' for='flexCheckAlbumin'>
+                            Albumin
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckGFR'></input>
+                        <label className='form-check-label' for='flexCheckGFR'>
+                            GFR
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckUric'></input>
+                        <label className='form-check-label' for='flexCheckUric'>
+                            Uric Acid
+                        </label>
+                    </div>
                 </div>
                 <button 
                     className='btn btn-organ'
@@ -190,6 +220,30 @@ const DashboardOrgans = () => {
                         <input className='form-check-input' type='checkbox' value='' id='flexCheckPancreas'></input>
                         <label className='form-check-label' for='flexCheckPancreas'>
                             All Pancreas Tests
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckAmylase'></input>
+                        <label className='form-check-label' for='flexCheckAmylase'>
+                            Amylase
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckLipase'></input>
+                        <label className='form-check-label' for='flexCheckLipase'>
+                            Lipase
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckGlucose'></input>
+                        <label className='form-check-label' for='flexCheckGlucose'>
+                            Glucose
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckHbA1C'></input>
+                        <label className='form-check-label' for='flexCheckHbA1C'>
+                            HbA1C
                         </label>
                     </div>
                 </div>
@@ -210,6 +264,18 @@ const DashboardOrgans = () => {
                             All Thyroid Tests
                         </label>
                     </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckTSH'></input>
+                        <label className='form-check-label' for='flexCheckTSH'>
+                            TSH
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckThyroxine'></input>
+                        <label className='form-check-label' for='flexCheckThyroxine'>
+                            Free Thyroxine
+                        </label>
+                    </div>
                 </div>
                 <button 
                     className='btn btn-organ'
@@ -226,6 +292,18 @@ const DashboardOrgans = () => {
                         <input className='form-check-input' type='checkbox' value='' id='flexCheckAdrenal'></input>
                         <label className='form-check-label' for='flexCheckAdrenal'>
                             All Adrenal Tests
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckTestosterone'></input>
+                        <label className='form-check-label' for='flexCheckTestosterone'>
+                            Testosterone
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckCortisol'></input>
+                        <label className='form-check-label' for='flexCheckCortisol'>
+                            Cortisol
                         </label>
                     </div>
                 </div>
@@ -246,6 +324,24 @@ const DashboardOrgans = () => {
                             All Bone Tests
                         </label>
                     </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckCalcium'></input>
+                        <label className='form-check-label' for='flexCheckCalcium'>
+                            Calcium
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckPhosphorus'></input>
+                        <label className='form-check-label' for='flexCheckPhosphorus'>
+                            Phosphorus
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckALK'></input>
+                        <label className='form-check-label' for='flexCheckALK'>
+                            ALK Phosphatase
+                        </label>
+                    </div>
                 </div>
                 <button 
                     className='btn btn-organ'
@@ -264,6 +360,126 @@ const DashboardOrgans = () => {
                             All Blood Tests
                         </label>
                     </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckWBC'></input>
+                        <label className='form-check-label' for='flexCheckWBC'>
+                            WBC
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckRBC'></input>
+                        <label className='form-check-label' for='flexCheckRBC'>
+                            RBC
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckHGB'></input>
+                        <label className='form-check-label' for='flexCheckHGB'>
+                            HGB
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckHCT'></input>
+                        <label className='form-check-label' for='flexCheckHCT'>
+                            HCT
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckMCV'></input>
+                        <label className='form-check-label' for='flexCheckMCV'>
+                            MCV
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckMCH'></input>
+                        <label className='form-check-label' for='flexCheckMCH'>
+                            MCH
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckMCHC'></input>
+                        <label className='form-check-label' for='flexCheckMCHC'>
+                            MCHC
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckRDW'></input>
+                        <label className='form-check-label' for='flexCheckRDW'>
+                            RDW
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckPLT'></input>
+                        <label className='form-check-label' for='flexCheckPLT'>
+                            PLT, Automated
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckMPV'></input>
+                        <label className='form-check-label' for='flexCheckCortisol'>
+                            MPV
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckNeutrophilP'></input>
+                        <label className='form-check-label' for='flexCheckNeutrophilP'>
+                            Neutrophil %
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckLymphocytesP'></input>
+                        <label className='form-check-label' for='flexCheckLymphocytesP'>
+                            Lymphocytes %
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckMonocytesP'></input>
+                        <label className='form-check-label' for='flexCheckMonocytesP'>
+                            Monocytes %
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckEosinophilsP'></input>
+                        <label className='form-check-label' for='flexCheckEosinophilsP'>
+                            Eosinophils %
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckBasophilsP'></input>
+                        <label className='form-check-label' for='flexCheckBasophilsP'>
+                            Basophils %
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckNeutrophilN'></input>
+                        <label className='form-check-label' for='flexCheckNeutrophilN'>
+                            Neutrophil #
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckLymphocytesN'></input>
+                        <label className='form-check-label' for='flexCheckLymphocytesN'>
+                            Lymphocytes #
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckMonocytesN'></input>
+                        <label className='form-check-label' for='flexCheckMonocytesN'>
+                            Monocytes #
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckEosinophilsN'></input>
+                        <label className='form-check-label' for='flexCheckEosinophilsN'>
+                            Eosinophils #
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckBasophilsN'></input>
+                        <label className='form-check-label' for='flexCheckBasophilsN'>
+                            Basophils #
+                        </label>
+                    </div>
                 </div>
                 <button 
                     className='btn btn-organ'
@@ -280,6 +496,30 @@ const DashboardOrgans = () => {
                         <input className='form-check-input' type='checkbox' value='' id='flexCheckSex'></input>
                         <label className='form-check-label' for='flexCheckSex'>
                             All Sex Organ Tests
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckTestosterone'></input>
+                        <label className='form-check-label' for='flexCheckTestosterone'>
+                            Testosterone
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckPSA'></input>
+                        <label className='form-check-label' for='flexCheckPSA'>
+                            PSA
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckEstradiol'></input>
+                        <label className='form-check-label' for='flexCheckEstradiol'>
+                            Estradiol
+                        </label>
+                    </div>
+                    <div className='form-check'>
+                        <input className='form-check-input' type='checkbox' value='' id='flexCheckCA125'></input>
+                        <label className='form-check-label' for='flexCheckCA125'>
+                            CA125
                         </label>
                     </div>
                 </div>
