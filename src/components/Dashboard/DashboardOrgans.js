@@ -2,9 +2,23 @@ import React, { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { HiChevronDown } from 'react-icons/hi';
 import './DashboardOrgans.css';
+import OrganCard from './OrganCard';
 
 const DashboardOrgans = () => {
-    
+    const tempData = [
+        {
+            date: '5/16/1966',
+            Glucose: '88',
+        },
+        {
+            date: '8/25/2021',
+            Glucose: '97',
+        },
+        {
+            date: '1/4/2021',
+            Glucose: '95',
+        }
+    ]
 
     return (
         <div className="container-fluid p-4">
@@ -524,6 +538,15 @@ const DashboardOrgans = () => {
                     </div>
                 </div>
             </div>
+            <OrganCard 
+                title='Glucose'
+                testName='Glucose'
+                data={tempData}
+                publicMin={50}
+                publicMax={120}
+                patientMax={100}
+                patientMin={82}
+            />
         </div>
     )
 }
