@@ -35,12 +35,14 @@ const TestDataReader = (file) => {
     }
 
     const formatData = (data) => {
-        const dates = data[0]
+        const dateData = data[0]
         const runDates = data[1]
         const accessionNumbers = data[2]
         const vanityRows = ['CMP', 'HEMOTOLOGY', 'CHEMISTRY', 'LIPID PANEL W/ CLDL', 'SPECIAL CHEMISTRY', 'ENDOCRINOLOGY', 'Tumor Marker', '*****']
         const otherRows = data.slice(3)
         const tests = []
+        const freshDates = []
+        const frozenDates = []
 
         let res = {}
 
@@ -50,23 +52,64 @@ const TestDataReader = (file) => {
             }
         }
 
-        for (let i = 1; i < accessionNumbers.length; i++){
-            let temp = dates[i].split(' ')
-            if (!(isValidDate(temp[0]) && isValidDate(runDates[i]))){
-                console.log('Invalid Data at column ' + (i+2))
-                return
+        for (let i = 1; i < dateData.length; i++) {
+            if (dateData[i].length < 3) {
+                continue
             }
-            if (accessionNumbers[i].length > 1){
-                res[accessionNumbers[i]]['date'] = temp[0]
-                res[accessionNumbers[i]]['type'] = temp[1]
-                res[accessionNumbers[i]]['runDate'] = runDates[i]
-                for (let j = 0; j < tests.length; j++) {
-                    res[accessionNumbers[i]][tests[j][0]] = tests[j][i]
+            let temp = dateData[i].split(' ')
+            if (temp.length === 1) {
+                freshDates.push(temp[0])
+            } else {
+                if (temp[1].toLowerCase() === 'frozen'){
+                    frozenDates.push(temp[0])
+                } else {
+                    freshDates.push(temp[0])
                 }
             }
         }
+
+        let sortedFreshDates = quickSortDates(freshDates)
+        let sortedFrozenDates = quickSortDates(frozenDates)
+
+        for (let i = 0; i < sortedFreshDates.length; i++){
+            let index = dateData.indexOf(sortedFreshDates[i])
+            let frozenIndex = -1
+            if (index < 0) {
+                index = dateData.indexOf(sortedFreshDates[i].concat(' ', 'FRESH'))
+                frozenIndex = dateData.indexOf(sortedFreshDates[i].concat(' ', 'FROZEN'))
+            }
+            res[accessionNumbers[index]] = {
+                date: sortedFreshDates[i],
+                type: 'FRESH',
+                runDate: runDates[index]
+            }
+            if (frozenIndex > -1) {
+                res[accessionNumbers[frozenIndex]] = {
+                    date: sortedFreshDates[i],
+                    type: 'FROZEN',
+                    runDate: runDates[frozenIndex]
+                }
+            }
+            for (let j = 0; j < tests.length; j++){
+                res[accessionNumbers[index]] = {
+                    tests: {
+                        [tests[j][0]]: tests[j][index],
+                    }
+                }
+                if (frozenIndex > -1) {
+                    res[accessionNumbers[frozenIndex]] = {
+                        tests: {
+                            [tests[j][0]]: tests[j][frozenIndex],
+                        }
+                    }
+                }
+            }
+        }
+
+        return res
     }
 
+    //Integrate better error handling for invalid dates
     const isValidDate = (date) => {
         if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(date)) {
             return false
@@ -91,6 +134,10 @@ const TestDataReader = (file) => {
     }
 
     const compareDates = (lesserDate, greaterDate) => {
+        if (!(isValidDate(lesserDate) && isValidDate(greaterDate))){
+            console.log('Invalid Dates: ' + lesserDate + ' or ' + greaterDate)
+            return
+        }
         const parts1 = lesserDate.split("/").map(str => parseInt(str))
         const parts2 = greaterDate.split("/").map(str => parseInt(str))
         if (parts1[2] > parts2[2]){
@@ -115,7 +162,7 @@ const TestDataReader = (file) => {
         }
     }
 
-    function quickSortDates(origArray) {
+    const quickSortDates = (origArray) => {
         if (origArray.length <= 1) {
             return origArray;
         } 
