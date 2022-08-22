@@ -8,15 +8,17 @@ const DashboardOrgans = () => {
     const tempData = [
         {
             date: '5/16/1966',
-            Glucose: '88',
+            FRESH: '88',
+            FROZEN: '99',
         },
         {
             date: '8/25/2021',
-            Glucose: '97',
+            FRESH: '97',
         },
         {
             date: '1/4/2021',
-            Glucose: '95',
+            FRESH: '95',
+            FROZEN: '82',
         }
     ]
 

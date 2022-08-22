@@ -2,24 +2,14 @@ import React, { useState } from 'react';
 import { ExcelRenderer } from 'react-excel-renderer';
 
 const TestDataReader = (file) => {
-    const [xlsxData, setXlsxData] = useState([])
-    const [resData, setResData] = useState([])
-    const [testData, setTestData] = useState([])
 
-    const readExcelFile = () => {        
+    const readExcelFile = (file) => {        
         ExcelRenderer(file, (err, resp) => {
             if (err) {
                 console.log(err)
             } else {
-                const newData = parseData(formatData(cleanData(resp.rows)))
+                return formatData(cleanData(resp.rows))
                 //console.log(newData)
-                if (checkPostcode(newData)) {
-                    setXlsxData(newData);
-                } else {
-                    console.log("Invalid Postal Codes from File")
-                    setAlertMessage("Check your postal codes. At least one of them is invlaid.")
-                    setShowAlertBox(true)
-                }
             }
         })
     }
@@ -47,9 +37,11 @@ const TestDataReader = (file) => {
         let res = {}
 
         for (let i = 0; i < otherRows.length; i++) {
-            if (vanityRows.every(val => val !== otherRows[i][0])){
-                tests.push(otherRows[i])
-            }
+            vanityRows.forEach(val => {
+                if (val !== otherRows[i][0]){
+                    tests.push(otherRows[i])
+                }
+            })
         }
 
         for (let i = 1; i < dateData.length; i++) {
@@ -69,7 +61,7 @@ const TestDataReader = (file) => {
         }
 
         let sortedFreshDates = quickSortDates(freshDates)
-        let sortedFrozenDates = quickSortDates(frozenDates)
+        //let sortedFrozenDates = quickSortDates(frozenDates)
 
         for (let i = 0; i < sortedFreshDates.length; i++){
             let index = dateData.indexOf(sortedFreshDates[i])
@@ -78,26 +70,26 @@ const TestDataReader = (file) => {
                 index = dateData.indexOf(sortedFreshDates[i].concat(' ', 'FRESH'))
                 frozenIndex = dateData.indexOf(sortedFreshDates[i].concat(' ', 'FROZEN'))
             }
-            res[accessionNumbers[index]] = {
+            res['FreshData'][accessionNumbers[index]] = {
                 date: sortedFreshDates[i],
                 type: 'FRESH',
                 runDate: runDates[index]
             }
             if (frozenIndex > -1) {
-                res[accessionNumbers[frozenIndex]] = {
+                res['FrozenData'][accessionNumbers[frozenIndex]] = {
                     date: sortedFreshDates[i],
                     type: 'FROZEN',
                     runDate: runDates[frozenIndex]
                 }
             }
             for (let j = 0; j < tests.length; j++){
-                res[accessionNumbers[index]] = {
+                res['FreshData'][accessionNumbers[index]] = {
                     tests: {
                         [tests[j][0]]: tests[j][index],
                     }
                 }
                 if (frozenIndex > -1) {
-                    res[accessionNumbers[frozenIndex]] = {
+                    res['FrozenData'][accessionNumbers[frozenIndex]] = {
                         tests: {
                             [tests[j][0]]: tests[j][frozenIndex],
                         }
@@ -185,6 +177,8 @@ const TestDataReader = (file) => {
         return newArray.concat(quickSortDates(left), pivot, quickSortDates(right));
         
     }
+
+    return readExcelFile(file)
 }
 
 export default TestDataReader

@@ -24,7 +24,8 @@ const OrganCard = (props) => {
                         <YAxis domain={[Math.floor(parseInt(props.publicMin)*.7), Math.floor(parseInt(props.publicMax)*1.2)]}/>
                         <Tooltip />
                         <Legend />
-                        <Line type='monotone' dataKey={props.testName} stroke='#8884d8'/>
+                        <Line type='monotone' dataKey={'FRESH'} stroke='#8884d8'/>
+                        <Line type='monotone' dataKey={'FROZEN'} stroke='#000000'/>
                         <ReferenceLine y={props.publicMax} stroke='#0066FF' strokeDasharray='3 3' />
                         <ReferenceLine y={props.publicMin} stroke='#0066FF' strokeDasharray='3 3' />
                         <ReferenceLine y={props.patientMax} stroke='#3388FF' strokeDasharray='3 3' />
